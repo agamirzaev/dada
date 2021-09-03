@@ -1,0 +1,951 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.EditProductProfileFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_add_order"
+        style="@style/Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="#6327FE">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="0dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="10dp"
+                android:src="@drawable/ic_shape"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/searchDada"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/circle_toolbar"
+                android:padding="8dp"
+                app:layout_constraintHorizontal_weight="2"
+                app:layout_constraintLeft_toRightOf="@id/btnBack"
+                app:layout_constraintRight_toLeftOf="@id/notificationIcon"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/ic_search" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Поиск на dadaBazar"
+                    android:textColor="#7E7E7E"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/notificationIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/notification" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                app:layout_constraintLeft_toLeftOf="@id/notificationIcon"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/radius_count_notif"
+                    android:gravity="center"
+                    android:padding="2dp"
+                    android:text="10"
+                    android:textColor="#000"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_add_order">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/titleEditOrder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Редактировать продукт"
+                android:textColor="#232F3E"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/titleEditOrderInformation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Основная информация о продукте"
+                android:textColor="#232F3E"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleEditOrder" />
+
+            <TextView
+                android:id="@+id/titleNameEditOrder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:text="Название"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleEditOrderInformation" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextEditNameProducts"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                android:hint="Название продукта. Например, мужская"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@+id/titleNameEditOrder" />
+
+            <TextView
+                android:id="@+id/titleCondition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Состояние"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextEditNameProducts" />
+
+
+            <RelativeLayout
+                android:id="@+id/editTextEditCondition"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleCondition">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="0dp"
+                    android:text="Новое"
+                    android:textColor="#232F3E"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_shape_bottom" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/titleEditCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Категория"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextEditCondition" />
+
+            <RelativeLayout
+                android:id="@+id/editTextEditCategory"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:textIsSelectable="false"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleEditCategory">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="0dp"
+                    android:text="Ничего не выбрано (Обязательное поле)"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_shape_bottom" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/titleEditDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Описание"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextEditCategory" />
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextEditDescription"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                android:gravity="top"
+                android:hint="Введите описание товара..."
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleEditDescription" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="#80AAAAAA"
+                app:layout_constraintTop_toBottomOf="@+id/editTextEditDescription" />
+
+            <TextView
+                android:id="@+id/titleEditProductDelivery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Ценообразование и доставка товара"
+                android:textColor="#232F3E"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view" />
+
+
+            <TextView
+                android:id="@+id/titleEditRegularPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:text="Обычная цена"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleEditProductDelivery" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextEditRegularPrice"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                android:gravity="center_vertical"
+                android:hint="Доступно только числовое значание"
+                android:inputType="number"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleEditRegularPrice" />
+
+            <TextView
+                android:id="@+id/titleEditSalePrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Цена продажи"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextEditRegularPrice" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextEditSalePrice"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                android:gravity="center_vertical"
+                android:hint="Доступно только числовое значание"
+                android:inputType="number"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleEditSalePrice" />
+
+            <TextView
+                android:id="@+id/titleEditCountProducts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Количество"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextEditSalePrice" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextEditCount"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                android:gravity="center_vertical"
+                android:hint="Количество товара (только числовое значание)"
+                android:inputType="number"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleEditCountProducts" />
+
+            <TextView
+                android:id="@+id/titleEditSKU"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="SKU"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextEditCount" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextEditSKU"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                android:gravity="center_vertical"
+                android:hint="Введите SKU"
+                android:inputType="number"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleEditSKU" />
+
+            <TextView
+                android:id="@+id/titleEditDeliveryTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Время доставки"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextEditSKU" />
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutEditDeliveryTime"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:textIsSelectable="false"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleEditDeliveryTime">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="0dp"
+                    android:text="Выберите время доставки"
+                    android:textColor="#232F3E"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_shape_bottom" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/titleEditShippingСost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Стоимость доставки"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/relativeLayoutEditDeliveryTime" />
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutEditShippingСost"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:textIsSelectable="false"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleEditShippingСost">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="0dp"
+                    android:text="Ничего не выбрано (Обязательное поле)"
+                    android:textColor="#232F3E"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_shape_bottom" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/titleEditShippingСostBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Стоимость доставки"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/relativeLayoutEditShippingСost" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/relativeLayoutEditShippingСostBottom"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                android:gravity="center_vertical"
+                android:hint="Введите сумму комисии за доставку"
+                android:inputType="number"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleEditShippingСostBottom" />
+
+            <TextView
+                android:id="@+id/titleEditPaymentMethods"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Способы оплаты"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/relativeLayoutEditShippingСostBottom" />
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutEditPaymentMethods"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:textIsSelectable="false"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleEditPaymentMethods">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="0dp"
+                    android:text="Предоплата"
+                    android:textColor="#232F3E"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_shape_bottom" />
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="#80AAAAAA"
+                app:layout_constraintTop_toBottomOf="@+id/relativeLayoutEditPaymentMethods" />
+
+
+            <TextView
+                android:id="@+id/titleEditProductLogistics"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Информация о логистике продукта"
+                android:textColor="#232F3E"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+            <TextView
+                android:id="@+id/titleEditOrigin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Происхождение"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleEditProductLogistics" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/relativeLayoutEditOrigin"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                android:gravity="center_vertical"
+                android:hint="Введите название страны происхождения товара"
+                android:orientation="horizontal"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleEditOrigin" />
+
+            <TextView
+                android:id="@+id/titleEditMarka"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Марка"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/relativeLayoutEditOrigin" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/relativeLayoutEditMarka"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                android:gravity="center_vertical"
+                android:hint="Введите название бренда продукта"
+                android:lines="1"
+                android:orientation="horizontal"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleEditMarka" />
+
+            <TextView
+                android:id="@+id/titleEditModelNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Номер модели"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/relativeLayoutEditMarka" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/relativeLayoutEditModelNumber"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                android:gravity="center_vertical"
+                android:hint="Введите номер модели продукта"
+                android:lines="1"
+                android:orientation="horizontal"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleEditModelNumber" />
+
+            <TextView
+                android:id="@+id/titleEditWeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Вес"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/relativeLayoutEditModelNumber" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/relativeLayoutEditWeight"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                android:gravity="center_vertical"
+                android:hint="Например, 5 кг, 11 фунт, 176 уцний"
+                android:lines="1"
+                android:orientation="horizontal"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleEditWeight" />
+
+            <TextView
+                android:id="@+id/titleEditLength"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Длина"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/relativeLayoutEditWeight" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/relativeLayoutEditLength"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                android:gravity="center_vertical"
+                android:hint="Например, 25 дюйм, 60,96 см, 5,5 мм"
+                android:lines="1"
+                android:orientation="horizontal"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleEditLength" />
+
+            <TextView
+                android:id="@+id/titleEditWidth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Ширина"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/relativeLayoutEditLength" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/relativeLayoutEditWidth"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                android:gravity="center_vertical"
+                android:hint="Например, 2 дюйм, 5,08 см, 12,5 мм"
+                android:lines="1"
+                android:orientation="horizontal"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleEditWidth" />
+
+            <TextView
+                android:id="@+id/titleEditHeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Рост"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/relativeLayoutEditWidth" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/relativeLayoutEditHeight"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                android:gravity="center_vertical"
+                android:hint="Например, 6 дюйм, 15,24 см, 12,5 мм"
+                android:lines="1"
+                android:orientation="horizontal"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleEditHeight" />
+
+            <View
+                android:id="@+id/view3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="#80AAAAAA"
+                app:layout_constraintTop_toBottomOf="@+id/relativeLayoutEditHeight" />
+
+            <TextView
+                android:id="@+id/titleEditPlaybill"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Афиша продукта и фотографии"
+                android:textColor="#232F3E"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+            <TextView
+                android:id="@+id/titleEditImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Фото"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleEditPlaybill" />
+
+            <RelativeLayout
+                android:id="@+id/EditImagePoster"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="6dp"
+                android:background="#F1F2F6"
+                android:gravity="center_vertical"
+                android:padding="36dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleEditImage">
+
+                <TextView
+                    android:id="@+id/textload"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center_horizontal"
+                    android:text="Нажмите чтобы загрузить"
+                    android:textColor="#232F3E"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textload"
+                    android:layout_marginTop="3dp"
+                    android:gravity="center_horizontal"
+                    android:text="select poster image"
+                    android:textColor="#232F3E"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/titleEditPicture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Картинки"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/EditImagePoster" />
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutEdit"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="6dp"
+                android:background="#F1F2F6"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleEditPicture">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:gravity="center_horizontal"
+                    android:src="@drawable/ic_group_add_product_cout"
+                    android:text="Нажмите чтобы загрузить"
+                    android:textColor="#232F3E"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/titleTextEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Добавить изображения галереи товаров. info Примечание: товары с хорошими и четкими фотографиями продаются быстрее!"
+                android:textColor="#1fb4ef"
+                android:textSize="14sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/relativeLayoutEdit" />
+
+            <View
+                android:id="@+id/view4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="#80AAAAAA"
+                app:layout_constraintTop_toBottomOf="@+id/titleTextEdit" />
+
+
+            <TextView
+                android:id="@+id/titleSelectProducts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Варианты продукта"
+                android:textColor="#232F3E"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view4" />
+
+            <TextView
+                android:id="@+id/titleTipSelectEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Тип вариации"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleSelectProducts" />
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutTipSelectEdit"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:textIsSelectable="false"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleTipSelectEdit">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="0dp"
+                    android:text="Единный вариант товара"
+                    android:textColor="#232F3E"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_shape_bottom" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/titleTipTextEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Оставьте [Товар с одним вариантом], если у товара нет вариантов"
+                android:textColor="#1fb4ef"
+                android:textSize="14sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/relativeLayoutTipSelectEdit" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/AddOrderProducts"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/shape_delete_account"
+                android:text="Сохранить изменения"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                app:layout_constraintTop_toBottomOf="@+id/titleTipTextEdit" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

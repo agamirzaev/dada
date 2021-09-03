@@ -1,0 +1,1070 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.AccountSettingsFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_setting_account"
+        style="@style/Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="#6327FE">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="0dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="10dp"
+                android:src="@drawable/ic_shape"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/searchDada"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/circle_toolbar"
+                android:padding="8dp"
+                app:layout_constraintHorizontal_weight="2"
+                app:layout_constraintLeft_toRightOf="@id/btnBack"
+                app:layout_constraintRight_toLeftOf="@id/notificationIcon"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/ic_search" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Поиск на dadaBazar"
+                    android:textColor="#7E7E7E"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/notificationIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/notification" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                app:layout_constraintLeft_toLeftOf="@id/notificationIcon"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/radius_count_notif"
+                    android:gravity="center"
+                    android:padding="2dp"
+                    android:text="10"
+                    android:textColor="#000"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_setting_account">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/titleSettingUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Управление настройками аккаунта"
+                android:textColor="#232F3E"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/titleSettingUser2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Настройки аватара аккаунта"
+                android:textColor="#343a40"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleSettingUser" />
+
+            <TextView
+                android:id="@+id/titleAvatar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Аватар:"
+                android:textColor="#8b8b8b"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleSettingUser2" />
+
+            <ImageView
+                android:id="@+id/avatarUserProfileSetting"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/unnamed"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleAvatar" />
+
+            <TextView
+                android:id="@+id/titleAvatarText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Мы рекомендуем использовать изображение для вашего аватара с соотношением сторон 1: 1, например 150x150, 300x300 и т. Д."
+                android:textColor="#1fb4ef"
+                android:textSize="14sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/avatarUserProfileSetting" />
+
+            <TextView
+                android:id="@+id/titleGeneralSettings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Общие настройки аккаунта"
+                android:textColor="#343a40"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleAvatarText" />
+
+            <TextView
+                android:id="@+id/titleNameUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Название:"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleGeneralSettings" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextNameUser"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                android:hint="Имя"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@+id/titleNameUser" />
+
+            <TextView
+                android:id="@+id/titleFirstNameUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Фамилия:"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextNameUser" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextFirstNameUser"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                android:hint="Фамилия"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@+id/titleFirstNameUser" />
+
+            <TextView
+                android:id="@+id/titleBioUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Bio:"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextFirstNameUser" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextDescription"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                android:gravity="top"
+                android:hint="Введите о своем бизнесе"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleBioUser" />
+
+            <TextView
+                android:id="@+id/titleBioText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Эта информация будет опубликована в вашем профиле и видна всем вашим посетителям"
+                android:textColor="#1fb4ef"
+                android:textSize="14sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextDescription" />
+
+
+            <TextView
+                android:id="@+id/titlePhoneUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Телефон:"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleBioText" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextPhoneUser"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                android:hint="Введите номер вашего мобильного телефона"
+                android:inputType="phone"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@+id/titlePhoneUser" />
+
+
+            <TextView
+                android:id="@+id/titleAddressUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Эл.адрес:"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextPhoneUser" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextAddressUser"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                android:hint="Введите вашу электронную почту"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@+id/titleAddressUser" />
+
+            <TextView
+                android:id="@+id/titleWhatsAppUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Whatsapp:"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextAddressUser" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextWhatsAppUser"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                android:hint="Введите свой номер Whatsapp"
+                android:inputType="phone"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@+id/titleWhatsAppUser" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="#80AAAAAA"
+                app:layout_constraintTop_toBottomOf="@+id/editTextWhatsAppUser" />
+
+            <TextView
+                android:id="@+id/titleSocialMediaAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Аккаунт в социальных сетях"
+                android:textColor="#343a40"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view" />
+
+            <TextView
+                android:id="@+id/titleFacebookUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Facebook:"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleSocialMediaAccount" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextFacebookUser"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                android:hint="Введите URL страницу вашего профиля в Facebook"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@+id/titleFacebookUser" />
+
+            <TextView
+                android:id="@+id/titleInstagramUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Instagram:"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextFacebookUser" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextInstagramUser"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                android:hint="Введите URL страницу вашего профиля в Instagram"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@+id/titleInstagramUser" />
+
+            <TextView
+                android:id="@+id/titleGooglePlusUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Google plus:"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextInstagramUser" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextGooglePlusUser"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                android:hint="Введите URL страницу вашего профиля в Google plus"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@+id/titleGooglePlusUser" />
+
+            <TextView
+                android:id="@+id/titleTwitterUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Twitter:"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextGooglePlusUser" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextTwitterUser"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                android:hint="Введите URL страницу вашего профиля в Twitter"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@+id/titleTwitterUser" />
+
+            <TextView
+                android:id="@+id/titleYoutubeUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Youtube:"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTwitterUser" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextYoutubeUser"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                android:hint="Введите URL страницу вашего профиля в Youtube"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@+id/titleYoutubeUser" />
+
+            <TextView
+                android:id="@+id/titleContactYouText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Пожалуйста, укажите актуальную контактную информацию, чтобы мы и ваши клиенты могли быстро связаться с вами"
+                android:textColor="#1fb4ef"
+                android:textSize="14sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextYoutubeUser" />
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="#80AAAAAA"
+                app:layout_constraintTop_toBottomOf="@+id/titleContactYouText" />
+
+            <TextView
+                android:id="@+id/titleLanguage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Язык по умолчанию для учетной записи"
+                android:textColor="#343a40"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+            <TextView
+                android:id="@+id/titleLanguageUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Язык:"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleLanguage" />
+
+            <RelativeLayout
+                android:id="@+id/editTextLanguage"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/shape_border_add_products"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:textIsSelectable="false"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleLanguageUser">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="0dp"
+                    android:text="Русский"
+                    android:textColor="#232F3E"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_shape_bottom" />
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/view3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="#80AAAAAA"
+                app:layout_constraintTop_toBottomOf="@+id/editTextLanguage" />
+
+            <TextView
+                android:id="@+id/titleCountry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Настройки адреса аккаунта"
+                android:textColor="#343a40"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+            <TextView
+                android:id="@+id/titleCountryUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Страна:"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleCountry" />
+
+            <RelativeLayout
+                android:id="@+id/editTextCountry"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/shape_border_add_products"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:textIsSelectable="false"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleCountryUser">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="0dp"
+                    android:text="Российская Федерация"
+                    android:textColor="#232F3E"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_shape_bottom" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/titleRegionUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Область:"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextCountry" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextRegionUser"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                android:hint="Введите название своего штата"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@+id/titleRegionUser" />
+
+            <TextView
+                android:id="@+id/titleСityUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Город:"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextRegionUser" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextCityUser"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                android:hint="Введите название своего города"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@+id/titleСityUser" />
+
+            <TextView
+                android:id="@+id/titleStreetNameUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Название улицы:"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextCityUser" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextStreetNameUser"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                android:hint="Введите название улицы"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@+id/titleStreetNameUser" />
+
+            <TextView
+                android:id="@+id/titleOffAptUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Off/Apt:"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextStreetNameUser" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextOffAptUser"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                android:hint="Введите номер своего офиса, квартиры и.т.д"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@+id/titleOffAptUser" />
+
+            <TextView
+                android:id="@+id/titleIndex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Индекс:"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextOffAptUser" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextIndexUser"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                android:hint="Введите почтовый индекс"
+                android:inputType="number"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@+id/titleIndex" />
+
+
+            <TextView
+                android:id="@+id/titleResidenceAddressText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Важно: Пожалуйста, укажите ваш фактический адрес проживания"
+                android:textColor="#1fb4ef"
+                android:textSize="14sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextIndexUser" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnUpdateSave"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/shape_update_data_profile"
+                android:text="Сохранить изменения"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                app:layout_constraintTop_toBottomOf="@+id/titleResidenceAddressText" />
+
+            <View
+                android:id="@+id/view4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="#80AAAAAA"
+                app:layout_constraintTop_toBottomOf="@+id/btnUpdateSave" />
+
+
+            <TextView
+                android:id="@+id/titleSettingPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Настройки пароля учетной записи"
+                android:textColor="#343a40"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view4" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayoutPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/shape_setting_password"
+                android:padding="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/titleSettingPassword">
+
+                <TextView
+                    android:id="@+id/qwerty"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Важно"
+                    android:textColor="#343a40"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Пожалуйста, следуйте этим рекомендациям: укажите минимальную длину (5 символов).
+                    Используйте заглавные и строчные буквы.
+                    Используйте цифры и специальные символы (% $)"
+                    android:textColor="#343a40"
+                    android:textSize="14sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/qwerty" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/titleOldPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Прежний пароль:"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayoutPassword" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextOldPasswordUser"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                android:hint="Введите свой текущий пароль"
+                android:inputType="textPassword"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@+id/titleOldPassword" />
+
+            <TextView
+                android:id="@+id/titleNewPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Новый пароль:"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextOldPasswordUser" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextNewPasswordUser"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                android:hint="Создать новый пароль"
+                android:inputType="textPassword"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@+id/titleNewPassword" />
+
+            <TextView
+                android:id="@+id/titleСonfirmPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Подтвердить:"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextNewPasswordUser" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextСonfirmUser"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                android:hint="Подтвердите ваш новый пароль"
+                android:inputType="textPassword"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@+id/titleСonfirmPassword" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnUpdateSavePassword"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/shape_update_data_profile"
+                android:text="Изменить пароль"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                app:layout_constraintTop_toBottomOf="@+id/editTextСonfirmUser" />
+
+            <View
+                android:id="@+id/view5"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="#80AAAAAA"
+                app:layout_constraintTop_toBottomOf="@+id/btnUpdateSavePassword" />
+
+            <TextView
+                android:id="@+id/titleAccountVerification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="DadaBazar Проверка аккаунта"
+                android:textColor="#343a40"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view5" />
+
+            <TextView
+                android:id="@+id/textAccountVerification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Рядом с именем пользователя отображается значок аутентификации учетной записи. Желательно, чтобы продавцы на рынке повышали уровень доверия клиентов"
+                android:textColor="#555"
+                android:textSize="14sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleAccountVerification" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayoutVerifiedAccount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/shape_config_account"
+                android:padding="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/textAccountVerification">
+
+                <TextView
+                    android:id="@+id/titleVerifiedAccount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Подтвержденный аккаунт"
+                    android:textColor="#343a40"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Ваш аккаунт был подтвержден. Спасибо за подтверждение вашей личности."
+                    android:textColor="#343a40"
+                    android:textSize="14sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/titleVerifiedAccount" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/view6"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="#80AAAAAA"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayoutVerifiedAccount" />
+
+            <TextView
+                android:id="@+id/titleDeleteAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Запрос на удаление аккаунта"
+                android:textColor="#343a40"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view6" />
+
+            <TextView
+                android:id="@+id/titlePasswordDeleteAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Пароль:"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleDeleteAccount" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextPasswordDeleteAccount"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                android:hint="Введите ваш пароль"
+                android:inputType="textPassword"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@+id/titlePasswordDeleteAccount" />
+
+            <TextView
+                android:id="@+id/titleCause"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Причина:"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextPasswordDeleteAccount" />
+
+            <RelativeLayout
+                android:id="@+id/editTextCause"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/shape_border_add_products"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:textIsSelectable="false"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleCause">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="0dp"
+                    android:text="Проблемы с началом"
+                    android:textColor="#232F3E"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_shape_bottom" />
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/titleMessageDelAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Сообщение:"
+                android:textColor="#9F9F9F"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextCause" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextMessageDelAccount"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_border_add_products"
+                android:gravity="top"
+                android:hint="Расскажите подробнее о причине вашего отъезда(необязательно)"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleMessageDelAccount" />
+
+            <TextView
+                android:id="@+id/textDeleteYourAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Чтобы удалить свой аккаунт, вам нужно отправить запрос на удаление,в результате администратор сайта рассмотрит ваш запрос и ответит на него, но перед тем, как вы это сделаете, обратите внимание, что все в вашем аккаунте будет удалено навсегда. Это включает в себя все ваших продуктов, информации о транзакциях, заказах и т. д."
+                android:textColor="#f6546a"
+                android:textSize="14sp"
+                android:textStyle="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextMessageDelAccount" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnDeleteAccout"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/shape_delete_account"
+                android:text="Отправить запрос на удаление аккаунта"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                app:layout_constraintTop_toBottomOf="@+id/textDeleteYourAccount" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_main"
+        android:checked="true"
+        android:enabled="true"
+        android:icon="@drawable/ic_home"
+        android:title="Главная"
+        android:visible="true" />
+    <item
+        android:id="@+id/navigation_catalog"
+        android:enabled="true"
+        android:icon="@drawable/ic_catalog"
+        android:title="Каталог"
+        android:visible="true" />
+    <item
+        android:id="@+id/navigation_bag"
+        android:enabled="true"
+        android:icon="@drawable/ic_basket"
+        android:title="Корзина"
+        android:visible="true" />
+    <item
+        android:id="@+id/navigation_bookmarks"
+        android:enabled="true"
+        android:icon="@drawable/ic_bookmarks"
+        android:title="Избранное"
+        android:visible="true" />
+    <item
+        android:id="@+id/navigation_office"
+        android:enabled="true"
+        android:icon="@drawable/ic_profile"
+        android:title="Кабинет"
+        android:visible="true" />
+</menu>
